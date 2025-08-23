@@ -8,8 +8,8 @@ terraform {
 
   # save into remote state
   backend "azurerm" {
-    resource_group_name  = var.dns_rg_name
-    storage_account_name = var.storage_account_name
+    resource_group_name  = "pipeline-dns"
+    storage_account_name = "sttfstate28663" 
     container_name       = "tfstate"
     key                  = "dns/terraform.tfstate"
   }
