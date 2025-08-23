@@ -5,12 +5,12 @@ Run **locally** with `dev.tfvars`. Deploy in **GitHub Actions** via **OIDC** (no
 
 ---
 
-## 1) Run locally with `dev.tfvars`
+## 1) Create `dev.tfvars`
 
 ### Prereqs
 - Azure CLI + Terraform installed
-- Azure subscription & a DNS Resource Group (e.g. `example-dns`)
-- (Optional but recommended) Remote state in Azure Storage
+- Azure subscription
+- Remote state in Azure Storage for terraform backend
 
 ### Create `dev.tfvars`
 ```hcl
@@ -38,6 +38,6 @@ az login
 az account set --subscription SUBSCRIPTION_ID
 
 terraform init
-terraform plan  -var="zone_name=example.com"
-terraform apply -var="zone_name=example.com" -auto-approve
+terraform plan  -var-file=dev.tfvars
+terraform apply -var-file=dev.tfvars
 ```
