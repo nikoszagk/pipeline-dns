@@ -15,6 +15,9 @@ env:
   ARM_SUBSCRIPTION_ID: ${{ vars.AZURE_SUBSCRIPTION_ID }}
   ARM_CLIENT_ID: ${{ vars.AZURE_CLIENT_ID }}
   TF_INPUT: false
+  TF_VAR_app_ip: ${{ vars.TF_VAR_APP_IP }}
+  TF_VAR_app_cname: ${{ vars.TF_VAR_APP_CNAME }}
+  TF_VAR_app_txt: ${{ vars.TF_VAR_APP_TXT }}
 
 jobs:
   terraform:
