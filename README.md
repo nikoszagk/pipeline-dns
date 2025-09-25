@@ -3,7 +3,7 @@
 Manage an Azure DNS zone and records.  
 Run **locally** with `dev.tfvars`. Deploy in **GitHub Actions** via **OIDC** (no secrets).
 
----
+----
 
 ## 1) Create `dev.tfvars`
 
