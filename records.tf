@@ -24,9 +24,9 @@ resource "azurerm_dns_txt_record" "txt_asuid" {
   record {
     value = var.app_txt
   }
- }
+}
 
- resource "azurerm_dns_txt_record" "txt_asuid_www" {
+resource "azurerm_dns_txt_record" "txt_asuid_www" {
   name                = "asuid.www"
   zone_name           = azurerm_dns_zone.pipeline.name
   resource_group_name = azurerm_resource_group.dns.name
@@ -34,4 +34,4 @@ resource "azurerm_dns_txt_record" "txt_asuid" {
   record {
     value = var.app_txt
   }
- }
+}
