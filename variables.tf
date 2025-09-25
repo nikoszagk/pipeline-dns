@@ -19,7 +19,6 @@ variable "zone_name" {
 variable "subscription_id" {
   type        = string
   description = "Azure subscription to deploy into"
-  default     = "00112233445566778899"
 }
 
 variable "storage_account_name" {
