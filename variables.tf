@@ -1,19 +1,16 @@
 variable "dns_rg_name" {
   description = "Resource Group to host the DNS zone"
   type        = string
-  default     = "rg-name-rc01"
 }
 
 variable "location" {
   description = "Location for the resource group (DNS is global, RG still needs a region)"
   type        = string
-  default     = "West Europe"
 }
 
 variable "zone_name" {
   description = "DNS zone (root domain)"
   type        = string
-  default     = "example.com"
 }
 
 variable "subscription_id" {
@@ -24,7 +21,6 @@ variable "subscription_id" {
 variable "storage_account_name" {
   description = "Resource Group to host the DNS zone"
   type        = string
-  default     = "sttfstate12345"
 }
 
 variable "app_ip" {
