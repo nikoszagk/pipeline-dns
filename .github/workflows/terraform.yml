@@ -11,18 +11,18 @@ permissions:
 
 env:
   ARM_USE_OIDC: true
-  ARM_TENANT_ID: ${{ vars.AZURE_TENANT_ID }}
-  ARM_SUBSCRIPTION_ID: ${{ vars.AZURE_SUBSCRIPTION_ID }}
-  ARM_CLIENT_ID: ${{ vars.AZURE_CLIENT_ID }}
+  ARM_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+  ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+  ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
   TF_INPUT: false
-  TF_VAR_app_ip: ${{ vars.TF_VAR_APP_IP }}
-  TF_VAR_app_cname: ${{ vars.TF_VAR_APP_CNAME }}
-  TF_VAR_app_txt: ${{ vars.TF_VAR_APP_TXT }}
-  TF_VAR_subscription_id: ${{ vars.TF_VAR_SUBSCRIPTION_ID }}
-  TF_VAR_dns_rg_name: ${{ vars.TF_VAR_DNS_RG_NAME }}
-  TF_VAR_location: ${{ vars.TF_VAR_LOCATION }}
-  TF_VAR_zone_name: ${{ vars.TF_VAR_ZONE_NAME }}
-  TF_VAR_storage_account_name: ${{ vars.TF_VAR_STORAGE_ACCOUNT_NAME }}
+  TF_VAR_app_ip: ${{ secrets.TF_VAR_APP_IP }}
+  TF_VAR_app_cname: ${{ secrets.TF_VAR_APP_CNAME }}
+  TF_VAR_app_txt: ${{ secrets.TF_VAR_APP_TXT }}
+  TF_VAR_subscription_id: ${{ secrets.TF_VAR_SUBSCRIPTION_ID }}
+  TF_VAR_dns_rg_name: ${{ secrets.TF_VAR_DNS_RG_NAME }}
+  TF_VAR_location: ${{ secrets.TF_VAR_LOCATION }}
+  TF_VAR_zone_name: ${{ secrets.TF_VAR_ZONE_NAME }}
+  TF_VAR_storage_account_name: ${{ secrets.TF_VAR_STORAGE_ACCOUNT_NAME }}
 
 
 jobs:
@@ -38,9 +38,9 @@ jobs:
       - name: Azure login (OIDC)
         uses: azure/login@v2
         with:
-          client-id: ${{ vars.AZURE_CLIENT_ID }}
-          tenant-id: ${{ vars.AZURE_TENANT_ID }}
-          subscription-id: ${{ vars.AZURE_SUBSCRIPTION_ID }}
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
       - name: Terraform init
         run: terraform init -upgrade
