@@ -18,6 +18,12 @@ env:
   TF_VAR_app_ip: ${{ vars.TF_VAR_APP_IP }}
   TF_VAR_app_cname: ${{ vars.TF_VAR_APP_CNAME }}
   TF_VAR_app_txt: ${{ vars.TF_VAR_APP_TXT }}
+  TF_VAR_subscription_id: ${{ vars.TF_VAR_SUBSCRIPTION_ID }}
+  TF_VAR_dns_rg_name: ${{ vars.TF_VAR_DNS_RG_NAME }}
+  TF_VAR_location: ${{ vars.TF_VAR_LOCATION }}
+  TF_VAR_zone_name: ${{ vars.TF_VAR_ZONE_NAME }}
+  TF_VAR_storage_account_name: ${{ vars.TF_VAR_STORAGE_ACCOUNT_NAME }}
+
 
 jobs:
   terraform:
